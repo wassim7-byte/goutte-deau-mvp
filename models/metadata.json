@@ -1,0 +1,104 @@
+{
+  "version": "202611260852",
+  "entraine_le": "2026-11-26T08:52:12+00:00",
+  "region": "Bretagne",
+  "modele_meteo": "random_forest",
+  "seuil_pluie_mm": 1.0,
+  "donnees_jusqu_au": "2026-01-14",
+  "features_meteo": [
+    "doy_sin",
+    "doy_cos",
+    "station_07110",
+    "station_07117",
+    "station_07130",
+    "station_07207",
+    "pluie_mm_j1",
+    "pmer_moy_j1",
+    "pmer_var_j1",
+    "t_moy_j1",
+    "amplitude_t_j1",
+    "ecart_rosee_j1",
+    "humidite_moy_j1",
+    "vent_moy_j1",
+    "nebulosite_moy_j1",
+    "pluie_mm_j2",
+    "pmer_moy_j2"
+  ],
+  "features_climato": [
+    "doy_sin",
+    "doy_cos",
+    "station_07110",
+    "station_07117",
+    "station_07130",
+    "station_07207"
+  ],
+  "evaluation": {
+    "periode_test": "2024-01-01 → 2026-01-14",
+    "taux_pluie_test": 0.3514,
+    "resultats": {
+      "reference_climatologie": {
+        "roc_auc": 0.5936,
+        "brier": 0.2242,
+        "accuracy": 0.6454,
+        "precision": 0.4906,
+        "rappel": 0.2421,
+        "f1": 0.3242
+      },
+      "reference_persistance": {
+        "roc_auc": 0.6508,
+        "brier": 0.3124,
+        "accuracy": 0.6876,
+        "precision": 0.5587,
+        "rappel": 0.5272,
+        "f1": 0.5425
+      },
+      "regression_logistique": {
+        "roc_auc": 0.7738,
+        "brier": 0.1837,
+        "accuracy": 0.7236,
+        "precision": 0.6562,
+        "rappel": 0.4482,
+        "f1": 0.5326,
+        "duree_entrainement_s": 0.03
+      },
+      "random_forest": {
+        "roc_auc": 0.7771,
+        "brier": 0.1793,
+        "accuracy": 0.7272,
+        "precision": 0.6369,
+        "rappel": 0.52,
+        "f1": 0.5726,
+        "duree_entrainement_s": 0.51
+      },
+      "gradient_boosting": {
+        "roc_auc": 0.7645,
+        "brier": 0.185,
+        "accuracy": 0.724,
+        "precision": 0.6305,
+        "rappel": 0.5179,
+        "f1": 0.5687,
+        "duree_entrainement_s": 0.49
+      },
+      "climatologie_ml (date seule)": {
+        "roc_auc": 0.6032,
+        "brier": 0.2219,
+        "accuracy": 0.6523,
+        "precision": 0.5116,
+        "rappel": 0.2256,
+        "f1": 0.3132
+      }
+    }
+  },
+  "importances": {
+    "pluie_mm_j1": 0.192,
+    "pmer_moy_j1": 0.187,
+    "pmer_var_j1": 0.1531,
+    "pmer_moy_j2": 0.1019,
+    "doy_cos": 0.0793,
+    "pluie_mm_j2": 0.0615,
+    "vent_moy_j1": 0.043,
+    "t_moy_j1": 0.0358,
+    "nebulosite_moy_j1": 0.0305,
+    "ecart_rosee_j1": 0.0265
+  }
+}

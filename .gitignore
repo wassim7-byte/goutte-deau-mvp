@@ -1,0 +1,12 @@
+# Données (re-générées par goutte.collect et goutte.database)
+data/
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# IDE
+.vscode/
+.idea/
+# Fichiers temporaires Office
+~$*
